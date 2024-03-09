@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        td{
+            padding: 10px 5px;
+        }
+        thead{
+            background-color: aliceblue;
+        }
+        tfoot{
+            background-color: antiquewhite;
+        }
+        table, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        #gajiPokok1,#tunjanganJabatan, #bpjs, #tunjanganKeluarga, #total{
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nilai</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nama</td>
+                <td id="nama">Ridwan</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Jabatan</td>
+                <td id="jabatan"> Manager</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td id="status">Menikah</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>Gaji pokok</td>
+                <td id="gajiPokok"></td>
+                <td id="gajiPokok1"></td>
+            </tr>
+            </tr>
+            <tr>
+                <td>Tunjamgam Jabatan</td>
+                <td>15% dari dari gaji pokok</td>
+                <td id="tunjanganJabatan"></td>
+            </tr>
+            <tr>
+                <td>Tunjangan keluarga</td>
+                <td id="nilaiTunjanganKeluarga"></td>
+                <td id="tunjanganKeluarga"></td>
+            </tr>
+            <tr>
+                <td>BPJS</td>
+                <td>-10% dari gaji pokok</td>
+                <td id="bpjs"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">Total Gaji</th>
+                <td id="total"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    
+    <script>
+        let pegawai = "Ridwan";
+        let jabatan = "Manager";
+        let status = "menikah";
+        
+        
+        if(jabatan=="Manager"){
+            gajiPokok = 15000000;
+        }
+        else if(jabatan=="Asisten Manager"){
+            gajiPokok = 10000000;
+        }
+        else if(jabatan=="Staff"){
+            gajiPokok = 5000000;
+        }
+        
+        const tunjanganJabatan = 0.15*gajiPokok;
+        const bpjs = 0.10*gajiPokok;
+        let nilaiTunjanganKeluarga =(status == "menikah") ? "20% dari gaji pokok" : 0;
+        let tunjanganKeluarga =(status == "menikah") ? 0.2*gajiPokok : 0;
+        
+        let total = gajiPokok + tunjanganJabatan + tunjanganKeluarga - bpjs;
+
+        document.getElementById("gajiPokok").innerHTML=gajiPokok;
+        document.getElementById("gajiPokok1").innerHTML=gajiPokok;
+        document.getElementById("tunjanganJabatan").innerHTML=tunjanganJabatan;
+        document.getElementById("bpjs").innerHTML=bpjs;
+        document.getElementById("tunjanganKeluarga").innerHTML=tunjanganKeluarga
+        document.getElementById("nilaiTunjanganKeluarga").innerHTML=nilaiTunjanganKeluarga
+        document.getElementById("total").innerHTML=total;
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+INi adalah tugas Javascript pertemuan pertama
