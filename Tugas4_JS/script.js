@@ -18,10 +18,10 @@ form.status.innerHTML = pilihanStatus;
 let no=0;
 function kirimData(){
     no++;
-    
     let nama = form.nama.value;
     let jabatan = form.jabatan.value;
     let status = form.status.value;
+    if(nama && jabatan && Status){
     
     let gaji = 0;
     if(jabatan === "Manager") {gaji = 15000000;}
@@ -60,5 +60,7 @@ function kirimData(){
     swal.fire({
         icon: "success",
         html: table,
-    })
+    });
+}
+    else{alert("Data belum Lengkap!!")}
 }
