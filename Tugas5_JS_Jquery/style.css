@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+}
+
+div{
+    margin: 23px auto;
+    width: 500px;
+    height: 500px;
+    background-color: aqua;
+    cursor: pointer;
+    border-radius: 12px;
+    
+}

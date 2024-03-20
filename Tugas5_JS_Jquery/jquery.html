@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Jquery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>My Pets</h3>
+    <div id="kucing"></div>
+    <div id="bebek"></div>
+    <div id="ayam"></div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $("#kucing").mouseover(function(){
+                $(this).html("<audio autoplay src='sound/meowrgh.mp3' type='audio/mp3'></audio>")
+                $(this).css({
+                    "background": "url('https://i.pinimg.com/564x/34/5d/bd/345dbd1cfdb190df9940a53c5fe36049.jpg')"
+                });
+            });
+            $("#kucing").mouseout(function(){
+                $(this).css({
+                    background: ""
+                });
+            });
+
+            $("#bebek").mouseover(function(){
+                $(this).html("<audio autoplay src='sound/cannard.mp3' type='audio/mp3'></audio>")
+                $(this).css({
+                    "background": "url('https://i.pinimg.com/564x/19/bb/0b/19bb0b05299a9e9fea6a45c3abef9a57.jpg')"
+                });
+            });
+            $("#bebek").mouseout(function(){
+                $(this).css({
+                    background: ""
+                });
+            });
+            $("#ayam").mouseover(function(){
+                $(this).html("<audio autoplay src='sound/chicken_1.mp3' type='audio/mp3'></audio>")
+                $(this).css({
+                    "background": "url('https://i.pinimg.com/564x/fe/35/0c/fe350cc39f94271362fabb61f0789361.jpg')"
+                });
+            });
+            $("#ayam").mouseout(function(){
+                $(this).css({
+                    background: ""
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
